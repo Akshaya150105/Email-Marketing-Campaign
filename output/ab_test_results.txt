@@ -1,4 +1,0 @@
-Control CTR: 2.28%
-Treatment CTR: 4.40%
-CTR Lift: 2.12%
-p-value: 0.0030

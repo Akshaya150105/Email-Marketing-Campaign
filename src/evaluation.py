@@ -1,3 +1,13 @@
+'''
+The provided code defines functions to evaluate the performance of a machine learning model 
+by calculating key metrics and visualizing them using precision-recall and ROC curves.'''
+'''
+precision_score: Measures the proportion of positive predictions that are correct
+recall_score:Measures the proportion of actual positives correctly identified
+f1_score(y_test, y_pred): The harmonic mean of precision and recall, balancing the two
+roc_auc_score:Computes the Area Under the Receiver Operating Characteristic curve, 
+indicating the model’s ability to distinguish classes
+'''
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import roc_curve

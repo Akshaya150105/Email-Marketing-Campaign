@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 def simulate_ab_test(df, rf_model, preprocessor, feature_names, top_k_percent=0.3, sample_size=5000):
     # Sample users with all relevant columns
     sample_users = df.sample(n=sample_size * 2, random_state=42)  # Total 3,940
-    
     # Extract features and target
     features = [
         "email_text", "email_version", "hour_bin", "weekday", "user_country",

@@ -1,3 +1,6 @@
+'''
+This code is for preparing data, training machine learning models, 
+simulating a targeted email campaign, and tuning prediction thresholds.'''
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,7 +18,7 @@ from imblearn.over_sampling import SMOTE
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import (
     classification_report, roc_auc_score, precision_score,
-    recall_score, f1_score, precision_recall_curve
+    recall_score, f1_score
 )
 
 def prepare_model_data(df):

@@ -62,7 +62,7 @@ def main():
         # Select best model based on CV AUC
         best_model_name = max(results, key=lambda x: results[x]['cv_auc'])
         best_model = results[best_model_name]['model']
-        print(f"\n✅ Best model: {best_model_name} (CV AUC: {results[best_model_name]['cv_auc']:.4f})")
+        print(f"\nBest model: {best_model_name} (CV AUC: {results[best_model_name]['cv_auc']:.4f})")
         
         # Save all models
         os.makedirs('output/models', exist_ok=True)
@@ -95,7 +95,7 @@ def main():
         top_users_export['Rank'] = range(1, len(top_users_export) + 1)
         top_users_export = top_users_export[['Rank', 'email_id', 'user_past_purchases', 'predicted_proba']]
         top_users_export.to_csv('output/top_users.csv', index=False)
-        print("✅ Top users exported to 'output/top_users.csv'")
+        print("Top users exported to 'output/top_users.csv'")
     except Exception as e:
         print(f"Error in evaluation or export: {e}")
         return
@@ -109,7 +109,7 @@ def main():
             top_k_percent=0.3
         )
         print("Campaign simulation complete!")
-        print("\n📈 Campaign Simulation Results:")
+        print("\nCampaign Simulation Results:")
         print(f"Baseline CTR:     {sim_result['baseline_ctr']*100:.2f}%")
         print(f"Model-Based CTR:  {sim_result['simulated_ctr']*100:.2f}%")
         print(f"Estimated Lift:   {sim_result['lift_percent']:.2f}%")
@@ -131,7 +131,7 @@ def main():
         print("Starting SHAP analysis...")
         X_sample = df.loc[X_test.index].sample(300, random_state=42)
         shap_values = explain_with_shap(best_model, X_sample, preprocessor, feature_names)
-        print("✅ SHAP analysis complete")
+        print(" SHAP analysis complete")
     except Exception as e:
         print(f"Error in SHAP analysis: {e}")
         return

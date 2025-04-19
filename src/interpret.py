@@ -1,3 +1,7 @@
+'''
+Computes SHAP values for a sample of data and generates two types of summary plots (bar and dot) 
+to visualize feature importance and their effects on predictions.
+'''
 import shap
 import matplotlib.pyplot as plt
 import pandas as pd
